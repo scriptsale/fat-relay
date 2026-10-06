@@ -5,6 +5,6 @@ services:
     plan: free
     envVars:
       - key: UUID
-        value: fb66de89-f31e-483b-99f1-5393bcb4343d
+        generateValue: true
       - key: WSPATH
         value: /fm-ws

@@ -7,19 +7,20 @@
 1. این ریپو را به Render وصل کنید (Dashboard → New → Web Service → Connect this repo).
    - Runtime: Docker (Dockerfile خوانده می‌شود)
    - Plan: Free
-2. محیط‌ها (در `render.yaml` هستند، اگر دستی زدید):
-   - `UUID` = fb66de89-f31e-483b-99f1-5393bcb4343d
-   - `WSPATH` = /fm-ws
+2. محیط‌ها:
+   - `UUID` = یک UUID تصادفی — در blueprint خودکار ساخته می‌شود؛ اگر دستی ست کردید هرگز داخل ریپو نگذارید.
+   - `WSPATH` = `/fm-ws`
    - `PORT` را Render خودش ست می‌کند.
 3. بعد از Deploy، دامنه‌ی سرویس (مثل `fat-relay-xxxx.onrender.com`) را بگیرید.
 
 ## کانفیگ کلاینت (v2rayNG / هر اپ VLESS)
 
 ```
-vless://fb66de89-f31e-483b-99f1-5393bcb4343d@<DOMAIN>:443?security=tls&sni=<DOMAIN>&type=ws&host=<DOMAIN>&path=%2Ffm-ws#FatRender
+vless://<UUID>@<DOMAIN>:443?security=tls&sni=<DOMAIN>&type=ws&host=<DOMAIN>&path=%2Ffm-ws#FatRender
 ```
 
-`<DOMAIN>` = دامنه‌ی onrender.com سرویس.
+- `<UUID>` = مقدار env `UUID` سرویس
+- `<DOMAIN>` = دامنه‌ی onrender.com سرویس
 
 ## نکات
 

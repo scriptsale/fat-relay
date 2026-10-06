@@ -2,8 +2,12 @@
 set -eu
 
 PORT="${PORT:-10000}"
-UUID="${UUID:-fb66de89-f31e-483b-99f1-5393bcb4343d}"
 WSPATH="${WSPATH:-/fm-ws}"
+
+if [ -z "${UUID:-}" ]; then
+  echo "ERROR: UUID env var is required" >&2
+  exit 1
+fi
 
 cat > /tmp/config.json <<EOF
 {
