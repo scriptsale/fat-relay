@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: fat-relay
+    runtime: docker
+    plan: free
+    envVars:
+      - key: UUID
+        value: fb66de89-f31e-483b-99f1-5393bcb4343d
+      - key: WSPATH
+        value: /fm-ws
